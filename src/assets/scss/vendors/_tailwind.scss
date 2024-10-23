@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* If you need to download some fonts - use this site: https://www.cufonfonts.com/ */
+// @layer base {
+//   @include font-face('Quicksand', '../fonts/Quicksand-Light', 300);
+//   @include font-face('Quicksand', '../fonts/Quicksand-Regular', 400);
+//   @include font-face('Quicksand', '../fonts/Quicksand-Medium', 500);
+//   @include font-face('Quicksand', '../fonts/Quicksand-SemiBold', 600);
+//   @include font-face('Quicksand', '../fonts/Quicksand-Bold', 700);
+// }
+
+body {
+  @apply text-base;
+}
+
+.section {
+  @apply py-10;
+}
+
+.section-title {
+  @apply font-bold;
+}
+
+.btn {
+  @apply block;
+}
+
+.btn-get {
+  @apply block rounded-[38px] px-[14px] py-3 bg-blue-FF duration-150 w-full sm:max-w-[202px] max-w-[126px] hover:bg-blue-DD focus:bg-blue-DD;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Для Firefox */
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Для Chrome, Safari и Opera */
+  margin: 0; /* Убираем отступы */
+}
+@layer utilities {
+  .marquee {
+    @apply animate-marquee;
+  }
+  .marquee2 {
+    @apply animate-marquee2;
+  }
+}
+// @media screen and (max-width: 319px) {
+//   .svg-logo {
+//     width: 100px;
+//   }
+// }

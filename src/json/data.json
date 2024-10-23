@@ -1,0 +1,44 @@
+{
+  "page": {
+    "lang": "en",
+    "title": "",
+    "description": "",
+    "canonicalOrg": "",
+    "canonical": "",
+    "image_url": "ogp/ogp.png"
+  },
+  "btn": {
+    "text": ""
+  },
+  "header": {
+    "id": "header",
+    "title": "Title"
+  },
+  "terms": {
+    "id": "terms",
+    "title": "Terms of Use"
+  },
+  "privacy": {
+    "id": "privacy",
+    "title": "Privacy Policy"
+  },
+  "footer": {
+    "id": "footer",
+    "title": "footer",
+    "links": [
+      {
+        "text": "Privacy Policy",
+        "href": "./privacy.html"
+      },
+      {
+        "text": "Terms of Use",
+        "href": "./terms.html"
+      }
+    ],
+    "year": "© <span class=\"footer-year\"></span>"
+  },
+  "form": {
+    "id": "form",
+    "link": ""
+  }
+}

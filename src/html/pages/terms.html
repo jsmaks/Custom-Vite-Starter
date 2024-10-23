@@ -1,0 +1,8 @@
+{% set pageTitle = terms.title %} {% extends "../partials/layout.html" %} {% block content %}
+<header class="">
+  <div class="container">{% include '../partials/components/logo-container.html' %}</div>
+</header>
+
+<main>{% include '../partials/sections/termsOfUse.html' %}</main>
+
+{% include "../partials/sections/footer.html" %} {% endblock %}

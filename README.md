@@ -1,2 +1,1 @@
-# Vite-Starter
-Custom-Vite-Starter
+# vite starter vanilla

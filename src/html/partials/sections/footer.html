@@ -1,0 +1,21 @@
+{% set section = footer %}
+
+<footer class="bg-[#ECEFF4] py-5 md:py-10 text-[#323131]">
+  <div class="container">
+    <ul class="grid grid-cols-2 gap-x-4 w-max mx-auto md:gap-x-8">
+      {% for item in section.links %}
+      <li class="flex justify-center items-center font-medium">
+        <a
+          href="{{item.href}}"
+          aria-label="link to {{item.text}}"
+          target="_blank"
+          class="text-center hover:text-[#4A90E2] duration-150"
+          rel="noopener noreferrer nofollow"
+          >{{item.text}}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="text-center font-semibold mt-5">{{section.year}}</p>
+  </div>
+</footer>
