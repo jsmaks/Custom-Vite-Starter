@@ -1,16 +1,16 @@
 @use 'sass:math';
 
 // UTILS
-@import 'utils/mixins';
+@use 'utils/mixins';
 
 // VENDORS
-@import 'vendors/tailwind';
+@use 'vendors/tailwind';
 
 // COMPONENTS
 
 // SECTIONS
-@import 'sections/header';
-@import 'sections/terms';
-@import 'sections/policy';
+@use 'sections/header';
+@use 'sections/terms';
+@use 'sections/policy';
 
-@import 'sections/footer';
+@use 'sections/footer';

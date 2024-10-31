@@ -8,6 +8,7 @@ import ViteSvgSpriteWrapper from 'vite-svg-sprite-wrapper';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import FullReload from 'vite-plugin-full-reload';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import stylus from 'stylus';
 
 // Импорт данных из JSON файла
 import data from './src/json/data.json';
@@ -33,30 +34,54 @@ export default defineConfig({
     open: true,
     hmr: true,
   },
+  css: {
+    preprocessorOptions: {
+      less: {
+        math: 'parens-division',
+      },
+      styl: {
+        define: {
+          $specialColor: new stylus.nodes.RGBA(51, 197, 255, 1),
+        },
+      },
+      scss: {
+        api: 'modern-compiler', // Изменено на "modern-compiler"
+        importers: [
+          // ...
+        ],
+      },
+    },
+  },
   build: {
     outDir: '../build',
+    emptyOutDir: true,
+
     rollupOptions: {
       input: htmlFiles.reduce((acc, file) => {
         acc[file.replace('.html', '')] = path.resolve(__dirname, 'src', file);
         return acc;
       }, {}),
+
       output: {
         assetFileNames: assetInfo => {
           const fileName = assetInfo.name;
           const extName = path.extname(fileName);
+          const filePath = path.relative('src/assets/images', assetInfo.name);
           switch (true) {
-            case fileName === 'index.css':
-              return 'assets/css/style.css';
             case fileName === 'sprite.svg':
               return 'assets/images/sprite.svg';
-            case extName === '.webp' ||
-              extName === '.svg' ||
-              extName === '.png' ||
+
+            case extName === '.webp' || extName === '.svg':
+              return `assets/images/sections/${filePath}`;
+
+            case extName === '.png' ||
               extName === '.jpg' ||
               extName === '.jpeg' ||
               extName === '.gif' ||
               extName === '.ico':
               return 'assets/images/[name][extname]';
+            case extName === '.woff' || extName === '.woff2' || extName === '.ttf':
+              return 'assets/fonts/[name][extname]';
             default:
               return 'assets/[name][extname]';
           }
