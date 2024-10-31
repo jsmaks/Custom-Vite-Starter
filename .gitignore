@@ -52,5 +52,3 @@ pnpm-lock.yaml
 # SVG SPRITE
 src/assets/images/sprite.svg
 
-# WEBP IMAGES
-*.webp
